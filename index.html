@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JobPrep Genie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>JobPrep Genie</h1>
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+
+  <main>
+    <section class="resume-optimizer">
+      <h2>Resume Optimizer</h2>
+      <textarea id="jobDescription" placeholder="Paste Job Description Here..."></textarea>
+      <textarea id="resumeText" placeholder="Paste Your Resume Here..."></textarea>
+      <div>
+        <button onclick="optimizeResume()">Optimize</button>
+        <button id="resetOptimizer">Reset</button>
+      </div>
+      <div class="score-display">
+        Score: <span id="score">0%</span>
+      </div>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+    </section>
+
+    <section class="job-tracker">
+      <h2>Job Tracker</h2>
+
+      <div class="job-inputs">
+        <input type="text" id="jobTitle" placeholder="Job Title (e.g. Frontend Developer)" />
+        <input type="url" id="jobLink" placeholder="Job Link (e.g. https://xyz.com)" />
+        <button onclick="addJob()">Add Job</button>
+      </div>
+
+      <div class="job-inputs">
+        <input type="text" id="jobSearch" placeholder="Search Jobs..." />
+      </div>
+
+      <div class="board">
+        <div class="column" data-status="wishlist">
+          <h3>Wishlist <span class="badge" id="wishlistCount">0</span></h3>
+          <div class="card-container"></div>
+        </div>
+        <div class="column" data-status="applied">
+          <h3>Applied <span class="badge" id="appliedCount">0</span></h3>
+          <div class="card-container"></div>
+        </div>
+        <div class="column" data-status="interview">
+          <h3>Interview <span class="badge" id="interviewCount">0</span></h3>
+          <div class="card-container"></div>
+        </div>
+        <div class="column" data-status="offer">
+          <h3>Offer <span class="badge" id="offerCount">0</span></h3>
+          <div class="card-container"></div>
+        </div>
+        <div class="column" data-status="rejected">
+          <h3>Rejected <span class="badge" id="rejectedCount">0</span></h3>
+          <div class="card-container"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
